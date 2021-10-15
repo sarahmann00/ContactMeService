@@ -11,19 +11,19 @@ phases:
   pre_build:
     commands:
       - echo Restore started on `date`
-      - dotnet restore ./ContactMeService/ContactMeService.csproj
+      - dotnet restore "ContactMeService/ContactMeService.csproj"
       
   build:
     commands:
       - echo Build started on `date`
-      - dotnet build ./ContactMeService/ContactMeService.csproj
+      - dotnet build "ContactMeService.csproj" -c Release -o /app/build
       
   post_build:
     commands:
       - echo Publish started on `date`
       # https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/dotnet-linux-platform-bundle-app.html
-      - dotnet publish -c Release -r linux-x64 -o ./ ContactMeService/ContactMeService.csproj
+      - dotnet publish "ContactMeService.csproj" -c Release -o /app/publish
       
 artifacts:
   files:
-    - ./**/*
+    - ./app/publish/**

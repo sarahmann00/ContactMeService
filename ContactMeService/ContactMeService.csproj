@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>1dc12a5e-7b6a-4910-a61c-7aa161285c7e</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <AssemblyName>$(MSBuildProjectName)Assembly</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
